@@ -1,0 +1,30 @@
+# Function to get letter grade based on average score
+def get_letter_grade(avg):
+    if avg >= 90:
+        return 'A'
+    elif avg >= 80:
+        return 'B'
+    elif avg >= 70:
+        return 'C'
+    elif avg >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+# Main function
+def main():
+    total_grades = 0
+    count = int(input("How many subjects ? "))
+
+    for i in range(count):
+        grade = float(input(f"Enter grade {i+1}: "))
+        total_grades += grade
+
+    average = total_grades / count
+    letter_grade = get_letter_grade(average)
+
+    print(f"Average Grade: {average:.2f}")
+    print(f"Letter Grade: {letter_grade}")
+
+if __name__ == "__main__":
+    main()
